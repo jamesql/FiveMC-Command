@@ -1,20 +1,19 @@
-using static CitizenFX.Core.Native.API;
-using CitizenFX.Core;
-using System;
-using CitizenFX.Core.Native;
 using System.Collections.Generic;
+using System;
+
+using static CitizenFX.Core.Native.API;
+using CitizenFX.Core.Native;
+using CitizenFX.Core;
 
 namespace BaseS.Client
 {
     public class ClientScript : BaseScript
     {
-
         public ClientScript()
         {
-            // Regitser Commands Like This
+            // Register Commands Like This
             API.RegisterCommand("test", new Action<int, List<object>, string>(testCommand), false);
         }
-
         // Command Methods will be like this
         private void testCommand(int source, List<object> arguments, string content)
         {
@@ -24,6 +23,5 @@ namespace BaseS.Client
                 message += (string)arg + " ";
             }
         }
-
     }
 }
